@@ -1,5 +1,7 @@
 **GIT Repositories:**
+
 HelloService: https://github.com/nikhil-287/helloService
+
 WorldService: https://github.com/nikhil-287/worldService
 
 Both repositories are on the main branch, and they include:
@@ -8,8 +10,11 @@ Dockerfiles and Kubernetes manifests (deployment.yaml, service.yaml).
 
 
 **Docker Images:**
+
 HelloService: https://hub.docker.com/repository/docker/nick287/helloservice/general
+
 WorldService: https://hub.docker.com/repository/docker/nick287/worldservice/general
+
 Both images were built and tested locally before being pushed to Docker Hub.
 
 
