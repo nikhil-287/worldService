@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment # Specifies that this resource is a Deployment, which is used to manage a set of replicated Pods.
+metadata:
+  name: worldservice # The name of the Deployment resource, used to identify and manage the Deployment within the Kubernetes cluster.
+spec:
+  selector:
+    matchLabels:
+      app: worldservice # Label selector that identifies the Pods managed by this Deployment. The Deployment will manage any Pods with this label.
+  replicas: 2 # Specifies the desired number of pod replicas to be running at all times. Kubernetes will ensure that this number of Pods is always up and running.
+  template:
+    metadata:
+      labels:
+        app: worldservice # Labels applied to the Pods created by this Deployment. These labels should match the selector above to ensure the Deployment manages these Pods.
+    spec:
+      containers:
+        - name: worldservice # Name of the container within the Pod. This name is used to reference the container within the Pod's configuration and logs.
+          image: nick287/worldservice:1 # Docker image to be used for the container. This should be a valid Docker image that is accessible to the Kubernetes cluster, either locally or from a registry.
+          imagePullPolicy: IfNotPresent # Policy that dictates when the Docker image should be pulled. "IfNotPresent" means the image will be pulled only if it is not already present on the node, which helps avoid unnecessary image downloads.
+          ports:
+            - containerPort: 8081 # The port on which the container will listen for incoming connections. This is the internal port within the container that the application is expected to use.
