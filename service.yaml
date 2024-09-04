@@ -1,0 +1,12 @@
+apiVersion: v1 # Specifies the Kubernetes API version used to create this resource
+kind: Service # Defines the resource type as a Service
+metadata: # Metadata for the Service resource
+  name: worldservice-svc # The name of the Service, which will be used to reference it within the cluster
+spec:
+  selector:
+    app: worldservice # The label selector used to find the Pods that this Service will target
+  ports:
+    - protocol: "TCP" # The protocol used by the Service; typically TCP
+      port: 8081 # The port that the Service will expose within the cluster
+      targetPort: 8081 # The port on the container that the Service should forward traffic to
+  type: NodePort # The type of Service; NodePort exposes the Service on each Node's IP at a static port
