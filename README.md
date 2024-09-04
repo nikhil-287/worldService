@@ -7,8 +7,8 @@ Java and Spring Boot source code.
 Dockerfiles and Kubernetes manifests (deployment.yaml, service.yaml).
 
 
-**Docker Images:
-**HelloService: https://hub.docker.com/repository/docker/nick287/helloservice/general
+**Docker Images:**
+HelloService: https://hub.docker.com/repository/docker/nick287/helloservice/general
 WorldService: https://hub.docker.com/repository/docker/nick287/worldservice/general
 Both images were built and tested locally before being pushed to Docker Hub.
 
